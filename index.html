@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rowel Posacas | Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<style>
+html{scroll-behavior:smooth}
+body{
+font-family:Segoe UI, sans-serif;
+background:#0f172a;
+color:white;
+transition:0.3s;
+}
+
+.dark-mode{
+background:white;
+color:black;
+}
+
+.section{
+min-height:100vh;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+}
+
+.overlay{
+width:100%;
+padding:80px 0;
+background:rgba(0,0,0,0.55);
+}
+
+.glass{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:15px;
+padding:30px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.skill-bar{
+margin-bottom:20px;
+}
+
+.progress{
+height:10px;
+}
+
+.project-card{
+background:rgba(255,255,255,0.1);
+border-radius:15px;
+padding:20px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.social-icons{
+position:fixed;
+right:20px;
+top:40%;
+z-index:1000;
+}
+
+.social-icons a{
+display:block;
+margin:10px 0;
+color:white;
+font-size:22px;
+}
+
+#particles-js{
+position:absolute;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.theme-toggle{
+cursor:pointer;
+}
+.ride-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.ride-img:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">Rowel</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<li class="nav-item theme-toggle nav-link"><i class="fa fa-moon"></i></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section id="home" class="section" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');">
+<div class="overlay">
+<div class="container text-center" data-aos="fade-up">
+<h1 class="display-3 fw-bold">Rowel Posacas</h1>
+<h3><span id="typing"></span></h3>
+<br>
+<a href="cv.pdf" class="btn btn-primary btn-lg">Download CV</a>
+</div>
+</div>
+</section>
+
+<section id="about" class="section" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');">
+<div class="overlay">
+<div class="container">
+<div class="glass" data-aos="fade-right">
+
+<div class="row align-items-center">
+
+<!-- Photos -->
+<div class="col-md-4 text-center">
+
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+
+<img src="img/wengside.jpg" 
+style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;">
+
+<img src="img/weng.jpg" 
+style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;">
+
+<img src="img/weng1.jpg" 
+style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;">
+
+</div>
+
+</div>
+
+<!-- About text -->
+<div class="col-md-8">
+<h2>About Me</h2>
+<p>
+I am a Bachelor of Science in Information Technology graduate with experience in web development, database systems, and embedded systems development. I build modern applications using PHP, MySQL, Bootstrap, JavaScript, and Arduino-based hardware projects.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills" class="section" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c');">
+<div class="overlay">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">Skills</h2>
+
+<div class="glass" data-aos="zoom-in">
+
+<div class="skill-bar">
+<p><i class="fab fa-html5"></i> HTML / CSS</p>
+<div class="progress"><div class="progress-bar bg-danger" style="width:90%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fab fa-js"></i> JavaScript / jQuery</p>
+<div class="progress"><div class="progress-bar bg-warning" style="width:85%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fab fa-php"></i> PHP & MySQL</p>
+<div class="progress"><div class="progress-bar bg-primary" style="width:90%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fab fa-bootstrap"></i> Bootstrap</p>
+<div class="progress"><div class="progress-bar bg-purple" style="width:85%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fas fa-microchip"></i> Arduino Development</p>
+<div class="progress"><div class="progress-bar bg-success" style="width:80%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fas fa-tools"></i> Hardware Installation</p>
+<div class="progress"><div class="progress-bar bg-info" style="width:85%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fas fa-download"></i> Software Installation</p>
+<div class="progress"><div class="progress-bar bg-secondary" style="width:85%"></div></div>
+</div>
+
+<div class="skill-bar">
+<p><i class="fas fa-laptop-medical"></i> PC Reformatting / Troubleshooting</p>
+<div class="progress"><div class="progress-bar bg-dark" style="width:90%"></div></div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects" class="section" style="background-image:url('https://images.unsplash.com/photo-1537432376769-00aabc1b1a18');">
+<div class="overlay">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">Projects</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4" data-aos="fade-up">
+<div class="project-card">
+<h4>Requisition System</h4>
+<p>PHP requisition approval system with dashboard and request tracking.</p>
+
+<div id="reqGallery" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="img/rrr.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/rrr1.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/rrr2.jpg" class="d-block w-100" alt="">
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up">
+<div class="project-card">
+<h4>RFID Gate Monitoring System</h4>
+<p>Arduino and RFID based gate monitoring system with user authentication and access logs.</p>
+
+<div id="rfidGallery" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="img/rfid.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/rfid1.jpg" class="d-block w-100" alt="">
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="col-md-4" data-aos="fade-up">
+<div class="project-card">
+<h4>Ordering Kiosk System</h4>
+<p>Touchscreen ordering kiosk system for restaurants with automated order processing.</p>
+
+<div id="kioskGallery" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="img/order.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/cashier.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/voucher.jpg" class="d-block w-100" alt="">
+</div>
+<div class="carousel-item">
+<img src="img/admin.jpg" class="d-block w-100" alt="">
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<section id="rides" class="section" style="background-image:url('https://images.unsplash.com/photo-1518655048521-f130df041f66');">
+<div class="overlay">
+<div class="container">
+
+<h2 class="text-center mb-5" data-aos="fade-up">Motorcycle Rides</h2>
+
+<div class="project-card text-center p-4">
+
+<h4 class="mb-3">🏍 Pitik for A Cause</h4>
+<p class="mb-4">Group motorcycle ride supporting a community cause and charity event.</p>
+
+<div class="row g-3 justify-content-center">
+
+<div class="col-6 col-md-3">
+<img src="img/ride1.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride2.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride3.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride4.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride5.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride6.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride7.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride8.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride9.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+<div class="col-6 col-md-3">
+<img src="img/ride10.jpg" class="ride-img" data-bs-toggle="modal" data-bs-target="#imgModal">
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="section" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216');">
+<div class="overlay">
+<div class="container text-center">
+<div class="glass" data-aos="zoom-in">
+<h2>Contact</h2>
+<p>Email: rowelposacaswp@email.com</p>
+<p>Phone: +63 948 325 7011</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+
+
+
+<div class="modal fade" id="imgModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content bg-dark">
+<div class="modal-body text-center">
+
+<img id="modalImage" src="" class="img-fluid rounded">
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+new Typed("#typing",{
+strings:["Web Developer","IT Specialist","Arduino Developer"],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+});
+
+particlesJS("particles-js",{
+particles:{
+number:{value:60},
+size:{value:3}
+}
+});
+
+$(".theme-toggle").click(function(){
+$("body").toggleClass("dark-mode");
+});
+
+
+
+$('.ride-img').click(function(){
+var img = $(this).attr('src');
+$('#modalImage').attr('src', img);
+});
+</script>
+
+</body>
+</html>
