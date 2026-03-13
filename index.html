@@ -13,6 +13,8 @@
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <style>
 html{scroll-behavior:smooth}
 body{
@@ -106,6 +108,44 @@ transition:0.3s;
 transform:scale(1.05);
 box-shadow:0 10px 20px rgba(0,0,0,0.5);
 }
+
+/* BMI Inputs */
+
+.bmi-input{
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+border-radius:10px;
+padding:12px;
+}
+
+.bmi-input::placeholder{
+color:#ccc;
+}
+
+.bmi-input:focus{
+background:rgba(255,255,255,0.15);
+border-color:#0d6efd;
+box-shadow:none;
+color:white;
+}
+
+/* BMI Button */
+
+.bmi-btn-check{
+background:#0d6efd;
+border:none;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+color:white;
+transition:0.3s;
+}
+
+.bmi-btn-check:hover{
+background:#0b5ed7;
+transform:scale(1.03);
+}
 </style>
 </head>
 
@@ -128,6 +168,7 @@ box-shadow:0 10px 20px rgba(0,0,0,0.5);
 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#bmiModal">BMI Calculator</a></li>
 <li class="nav-item theme-toggle nav-link"><i class="fa fa-moon"></i></li>
 </ul>
 </div>
@@ -406,6 +447,42 @@ I am a Bachelor of Science in Information Technology graduate with experience in
 </div>
 </div>
 
+
+<div class="modal fade" id="bmiModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content bg-transparent border-0">
+
+<div class="glass text-white">
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h4 class="mb-0">🩺 BMI Calculator</h4>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+
+<p class="text-muted small mb-4">Health Monitoring Tool</p>
+
+<div class="mb-3">
+<label class="form-label">Height (cm)</label>
+<input type="number" id="height" class="form-control bmi-input" placeholder="e.g. 165">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Weight (kg)</label>
+<input type="number" id="weight" class="form-control bmi-input" placeholder="e.g. 60">
+</div>
+
+<div class="d-grid mt-4">
+<button class="btn bmi-btn-check" id="checkBMI">
+Check BMI
+</button>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -438,6 +515,60 @@ $('#modalImage').attr('src', img);
 });
 </script>
 
+<script>
+$('#checkBMI').on('click', function () {
+
+    let height = parseFloat($('#height').val());
+    let weight = parseFloat($('#weight').val());
+
+    if (!height || !weight || height <= 0 || weight <= 0) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Missing Information',
+            text: 'Please enter valid height and weight.',
+            confirmButtonColor: '#198754'
+        });
+        return;
+    }
+
+    let heightMeters = height / 100;
+    let bmi = weight / (heightMeters * heightMeters);
+    bmi = bmi.toFixed(2);
+
+    let status = '';
+    let icon = '';
+    let color = '';
+
+    if (bmi < 18.5) {
+        status = 'Underweight';
+        icon = 'info';
+        color = '#ffc107';
+    } else if (bmi < 25) {
+        status = 'Normal';
+        icon = 'success';
+        color = '#198754';
+    } else if (bmi < 30) {
+        status = 'Overweight';
+        icon = 'warning';
+        color = '#fd7e14';
+    } else {
+        status = 'Obese';
+        icon = 'error';
+        color = '#dc3545';
+    }
+
+    Swal.fire({
+        icon: icon,
+        title: 'BMI Result',
+        html: `
+            <h2 style="color:${color}">${bmi}</h2>
+            <p class="fw-bold">${status}</p>
+        `,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#198754'
+    });
+});
+</script>
+
 </body>
 </html>
-
